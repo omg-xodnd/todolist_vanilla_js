@@ -1,34 +1,44 @@
 * {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
-body {
-    margin: 0;
+*:focus {
+    outline: none;
 }
 
 body {
     margin: 0;
     width: 100vw;
     height: 100vh;
-
-    background: #757F9A;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #D7DDE8, #c0c0c0);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #D7DDE8, #c0c0c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .title {
     margin:0;
     padding-top: 7vh;
+    margin-bottom: 15px;
 
     color: #333333;
     text-align: center;
     font-size: 2rem;
-    font-weight: 300;
 }
 
 main {
-    padding: 7vh 0;
+    padding: 5vh 10px;
+}
+
+.btn-show-input {
+    animation-name: color-change;
+    animation-duration: 5s;
+    /* animation-iteration-count: infinite;
+    animation-direction: alternate; */
+    animation-fill-mode: forwards;
+}
+
+@keyframes color-change {
+    from{color:white;}
+    to{color:tomato;}
 }
 
 .input-container {
@@ -36,39 +46,116 @@ main {
     justify-content: center;
 }
 
-
 .add-btn {
-    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
     height:30px;
-    padding:5px;
-    background-color: #333333;
-    color: white;
+    border-bottom: 1px solid #777777;
+    color: black;
     text-align: center;
+    transition: all ease 0.5s;
 }
 
 .btn:hover {
     cursor: pointer;
+    border: none;
+    color: white;
     background-color: tomato;
 }
 
 @keyframes slidein {
   from {width: 0px;}
-  to {width: 300px;}
+  to {width: 360px;}
 }
 
-#todo-input {
-    width: 300px;
+#task-input {
     height: 30px;
-    border: none;
-    border-bottom: 1px solid black;
-    background: none;
+    padding: 0;
     padding-left: 10px;
 
-    animation-duration: 1s;
+    border: none;
+    border-bottom: 1px solid #777777;
+    background: none;
+
+    animation-duration: 300ms;
     animation-name: slidein;
     animation-fill-mode: forwards;
 }
 
+#warning-msg {
+    display: none;
+    text-align: center;
+    color: black;
+}
+
+.list-container {
+    width: 400px;
+    margin: auto;
+    box-shadow: 5px 5px 5px lightgray;
+    border-bottom: 1px solid #777777;
+}
+
 ul {
+    width: 400px;
+    padding: 0;
+    margin:auto;
+    
+    border-radius: 5px;
     list-style: none;
+}
+
+.list-title {
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #333333;
+    color: white;   
+    font-weight: 400;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    height: 50px;
+
+    border-top: 1px solid #777777;
+    transition: all ease 0.5s;
+}
+
+.task:hover {
+    cursor: pointer;
+    background-color: rgb(241, 241, 247);
+}
+
+.no-task {
+    text-align: center;
+    padding: 50px;
+}
+
+.task-text {
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.fas {
+    margin: 0 5px;
+    color: #777777;
+    font-size: 0.8rem;
+}
+
+.fas:hover {
+    cursor: pointer;
+    color: tomato;
+}
+
+.done > div {
+    color: #777777;
+    text-decoration: line-through rgb(231, 170, 178);
 }
