@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: #757F9A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #D7DDE8, #c0c0c0);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #D7DDE8, #c0c0c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.title {
+    margin:0;
+    padding-top: 7vh;
+
+    color: #333333;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+}
+
+main {
+    padding: 7vh 0;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.add-btn {
+    width: 50px;
+    height:30px;
+    padding:5px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: tomato;
+}
+
+@keyframes slidein {
+  from {width: 0px;}
+  to {width: 300px;}
+}
+
+#todo-input {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid black;
+    background: none;
+    padding-left: 10px;
+
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-fill-mode: forwards;
+}
+
+ul {
+    list-style: none;
+}
