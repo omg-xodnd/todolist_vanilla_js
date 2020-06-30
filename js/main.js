@@ -3,7 +3,9 @@ const inputContainer = document.querySelector(".input-container"),
       warning = document.querySelector("#warning-msg"),
       noTask = document.querySelector(".no-task"),
       todoList = document.querySelector(".todo-list"),
-      doneList = document.querySelector(".done-list")
+      doneList = document.querySelector(".done-list"),
+      clock = document.querySelector('#clock'),
+      today = document.querySelector('#today')
 let counter = 0,
     taskList = []
 
@@ -39,11 +41,8 @@ function addTaskToList(task) {
     div.classList.add("task-text")
     div.innerText = task.text
     div.addEventListener("click", finishTask)
-
     icon.classList.add("fas", "fa-trash-alt")
     icon.addEventListener("click", deleteTask)
-
-    
     li.appendChild(div)
     li.appendChild(icon)
     if (task.done == true) {
@@ -118,9 +117,22 @@ function unfinishTask() {
     task.classList.remove("done")
     event.target.removeEventListener("click", unfinishTask)
     event.target.addEventListener("click", finishTask)
-
     saveList()
 }
+
+function getTime() {
+    const dateObj = new Date(),
+          month = dateObj.getMonth(),
+          date = dateObj.getDate(),
+          dayArr = ['일', '월', '화', '수', '목', '금', '토'],
+          day = dayArr[dateObj.getDay()],
+          hour = dateObj.getHours(),
+          min = dateObj.getMinutes()
+    
+    clock.innerText = `${hour < 10 ? `0${hour}` : hour}:${min < 10 ? `0${min}` : min}`
+    today.innerText = `${month}월 ${date}일 ${day}요일`
+}
+
 
 function saveList() {
     localStorage.setItem("TASK_LIST", JSON.stringify(taskList))
@@ -148,6 +160,8 @@ function init() {
     loadList()
     saveList()
     checkList()
+    getTime()
+    setInterval(getTime, 60000)
 }
 
 init()
