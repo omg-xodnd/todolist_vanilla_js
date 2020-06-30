@@ -95,7 +95,7 @@ main {
     width: 400px;
     margin: auto;
     box-shadow: 5px 5px 5px lightgray;
-    border-bottom: 1px solid #777777;
+    
 }
 
 ul {
@@ -125,7 +125,7 @@ ul {
     padding: 0 20px;
     height: 50px;
 
-    border-top: 1px solid #777777;
+    border-bottom: 1px solid #777777;
     transition: all ease 0.5s;
 }
 
