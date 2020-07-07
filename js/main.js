@@ -111,7 +111,10 @@ function unfinishTask() {
     const task = event.target.parentNode,
           idx = task.id.slice(1)
 
-    taskList.forEach((t) => {if(t.id == idx){t.done = false}})
+    console.log(event.target)
+    console.log(task)
+
+    taskList.forEach((t) => {if(t.id === idx){t.done = false}})
     task.parentNode.removeChild(task)
     todoList.appendChild(task)
     task.classList.remove("done")

@@ -23,7 +23,7 @@ header {
 }
 
 #clock {
-    font-size: 10rem;
+    font-size: 8rem;
     margin:0;
 }
 
@@ -33,14 +33,14 @@ main {
 
 .btn-show-input {
     animation-name: color-change;
-    animation-duration: 5s;
-    /* animation-iteration-count: infinite;
-    animation-direction: alternate; */
-    animation-fill-mode: forwards;
+    animation-duration: 0.9s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /* animation-fill-mode: forwards; */
 }
 
 @keyframes color-change {
-    from{color:white;}
+    from{color: white;}
     to{color:tomato;}
 }
 
